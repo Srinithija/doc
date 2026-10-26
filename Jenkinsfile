@@ -14,7 +14,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'python -m unittest test_app.py'
+                bat '"C:\\Users\\SRINITHIJA\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" run --rm -v "%CD%:/test" -w /test python:3.12-slim python -m unittest test_app.py'
             }
         }
 

@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'docker build -t ci-cd-demo .'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" build -t ci-cd-demo .'
             }
         }
 
@@ -20,8 +20,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                bat 'docker rm -f ci-cd-container || exit /b 0'
-                bat 'docker run -d --name ci-cd-container -p 5000:5000 ci-cd-demo'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" rm -f ci-cd-container'
+                bat '"C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe" run -d --name ci-cd-container -p 5000:5000 ci-cd-demo'
             }
         }
     }

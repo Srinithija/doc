@@ -21,7 +21,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 bat '"C:\\Users\\SRINITHIJA\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" rm -f ci-cd-container || exit /b 0'
-                bat '"C:\\Users\\SRINITHIJA\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" run -d --name ci-cd-container -p 5000:5000 ci-cd-demo'
+                bat '"C:\\Users\\SRINITHIJA\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" run -d --name ci-cd-container -p 5001:5000 ci-cd-demo'
             }
         }
     }
